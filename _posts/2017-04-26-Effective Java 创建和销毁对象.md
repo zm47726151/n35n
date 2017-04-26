@@ -9,15 +9,18 @@
 
 ### 1、考虑用静态工厂的方法代替构造器
 <p>优点：<p/> 
+
 > * 有名字
 > * 不必每次创建对象
 > * 返回任何子类型对象，简洁的代码。
 
 <p>缺点：<p/> 
+
 > * 该类将不能被子类化（复合大于继承，也是优点）
 > * 不方便doc工具输出文档。
 
 <p>一般约定的命名规则:<p/>
+
 > * valueOf  转换类型
 > * getInstance 获得对象实例
 > * newInstance 创建新的对象实例
@@ -25,14 +28,18 @@
 > * newType 置入返回对象的类型，在不同类中方便区别工厂方法
 
 ###示例代码：
+
 服务提供者
+
 ```java
 // Service provider framework sketch - Service provider interface - Page 12
 public interface Provider {
     Service newService();
 }
 ```
+
 服务
+
 ```java
 // Service provider framework sketch - Service interface - Page 12
 
@@ -40,7 +47,9 @@ public interface Service {
     // Service-specific methods go here
 }
 ```
+
 服务工厂
+
 ```java
 import java.util.*;
 import java.util.concurrent.*;
@@ -79,7 +88,9 @@ public class Services {
 	}
 }
 ```
+
 测试代码
+
 ```java
 public class Test {
 	public static void main(String[] args) {
@@ -132,6 +143,7 @@ public class Test {
 	};
 }
 ```
+
 ### 2、遇到多个构造函数参数时要考虑使用构建器
 ### 3、用私有构造函数强化singleton属性
 ### 4、通过私有构造函数强化不可实例化的能力
