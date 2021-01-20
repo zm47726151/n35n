@@ -36,3 +36,5 @@ docker 同步宿机时间到容器（zoo2）时间
 ​	docker cp /usr/share/zoneinfo/Asia/Shanghai zoo2:/etc/localtime	
 docker设置开机启动
 ​	docker update --restart=always mysql
+启动mysql
+docker start mysql
